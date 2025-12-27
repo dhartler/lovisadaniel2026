@@ -14,20 +14,18 @@
     .brand{font-weight:700;color:var(--accent);letter-spacing:0.2px}
     nav{margin-left:auto}
     nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:8px;transition:all .15s}
-    nav a:hover{background:rgba(124,92,255,0.08);color:var(--accent)}
-    nav a.active{color:#fff;background:var(--accent)}
+    nav a:hover{background:rgba(104, 100, 94, 0.603);color:var(--accent)}
+    nav a.active{color:#b6aaaa;background:var(--accent)}
 
     main{display:flex;justify-content:center;padding:48px 20px}
     .container{width:80%;max-width:880px;background:var(--card);border-radius:12px;box-shadow:0 6px 18px rgba(30,30,30,0.06);padding:30px}
     h1{margin:0 0 18px;font-size:20px}
     .meta{color:var(--muted);font-size:14px;margin-bottom:22px}
-    h2{margin-top:48px;font-size:18px}
+    h2{margin-top:18px;font-size:18px}
 
-    p{line-height:1.7;color:#222;margin:18px 0}
-    .anchor-title{margin-top:48px}
-    .backtop{display:inline-block;margin-top:8px;color:var(--accent);text-decoration:none;font-size:14px}
+    p{line-height:1.7;color:#222;margin:10px 0}
 
-    img{width:100%;border-radius:12px;margin-bottom:24px;object-fit:cover;object-position:center}
+    img{width:100%;border-radius:12px;margin-bottom:0px;object-fit:cover;object-position:center}
     iframe{width:100%;margin-top:24px}
     .hidden{display:none}
     button{background:none;border:2px solid #aaa;border-radius: 40px; color:var(--accent);cursor:pointer;font-size:16px;padding: 20px;font-family:inherit}
@@ -62,9 +60,9 @@
         <img src="IMG_6820_copy.jpeg" alt="">
 
       <h2 id="Plats">När och var?</h2>
-        <p id="para-1" class="anchor-title">
-            Bröllopscermonin äger rum lördag 13e juni kl.14.30 i Gamla Uppsala Kyrka, Disavägen 8, Uppsala. 
-            Efter det väntas middag och fest i Ärentuna byggdegård.
+        <p>
+            Bröllopscermonin äger rum lördag 13e juni kl.14.30 i Gamla Uppsala Kyrka, <i>Disavägen 8, 754 40 Uppsala.
+            Efter det väntas middag och fest i Ärentuna byggdegård, <i>Ärentuna Bygdegård Ärentuna, 743 91 Storvreta.</i>
         </p>
     <button id="toggle-rsvp" class="backtop" aria-controls="rsvp-form" aria-expanded="false">Klicka här för att OSA!</button>
     <iframe id="rsvp-form" class="hidden" src="https://docs.google.com/forms/d/e/1FAIpQLSdliz0vHYAIFRwzKzVowGcpYWLgU5QyzW9yA1rdoFVvzS6k7w/viewform?embedded=true" width="640" height="454" frameborder="0" marginheight="0" marginwidth="0">Läser in …</iframe>
@@ -82,7 +80,7 @@
         <p>
             Er närvaro på vår stora dag är den bästa gåvan vi kan få. Om ni ändå önskar ge en present, så kommer några tips nedan.
             <ul>
-                <li>pengar</li>
+                <li></li>
                 <li>ännu mer pengar</li>
             </ul>
         </p>
@@ -90,22 +88,6 @@
   </main>
 
   <script>
-    // Highlight active nav link based on scroll position
-    const links = Array.from(document.querySelectorAll('nav a'));
-    const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
-
-    function onIntersect(entries){
-      entries.forEach(entry => {
-        const id = entry.target.id;
-        const link = links.find(a => a.getAttribute('href') === '#' + id);
-        if(link){
-          link.classList.toggle('active', entry.isIntersecting);
-        }
-      });
-    }
-
-    const observer = new IntersectionObserver(onIntersect, {root:null,rootMargin:'-45% 0px -45% 0px',threshold:0});
-    sections.forEach(s => observer.observe(s));
    
    // Toggle RSVP iframe visibility
     const toggleBtn = document.getElementById('toggle-rsvp');
