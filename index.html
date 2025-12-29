@@ -61,10 +61,10 @@
 
       <h2 id="Plats">När och var?</h2>
         <p>
-            Bröllopscermonin äger rum lördag 13e juni kl.14.30 i Gamla Uppsala Kyrka, Disavägen 8, Uppsala.
-            Efter det väntas middag och fest i Ärentuna Bygdegård Ärentuna, Storvreta.
+            Bröllopscermonin äger rum lördag 13e juni kl.14.30 i Gamla Uppsala Kyrka.
+            Efter det väntas middag och fest i Ärentuna Bygdegård.
         </p>
-    <button id="toggle-rsvp" class="backtop" aria-controls="rsvp-form" aria-expanded="false">Klicka här för att OSA!</button>
+    <button id="toggle-rsvp" class="backtop" aria-controls="rsvp-form" aria-expanded="false">Klicka här för att OSA, gärna så snabbt som möjligt!</button>
     <iframe id="rsvp-form" class="hidden" src="https://docs.google.com/forms/d/e/1FAIpQLSdliz0vHYAIFRwzKzVowGcpYWLgU5QyzW9yA1rdoFVvzS6k7w/viewform?embedded=true" width="640" height="454" frameborder="0" marginheight="0" marginwidth="0">Läser in …</iframe>
 
       <h2 id="Dresscode">Klädkod</h2>
@@ -73,32 +73,26 @@
         </p>
     <h2 id="Tal">Hålla tal</h2>
         <p>
-            Om du vill hålla ett tal eller liknande hör av dig till toastmasterna Disa och Michael i god tid innan.
+            Om du vill hålla ett tal eller liknande, hör av dig till toastmasterna Disa och Michael i god tid innan, på lovisadaniel2026@gmail.com.
 
         </p>
     <h2 id ="Presenter">Presenter</h2>
         <p>
-            Er närvaro på vår stora dag är den bästa gåvan vi kan få. Om ni ändå önskar ge en present, så kommer några tips nedan.
-            <ul>
-                <li></li>
-                <li>ännu mer pengar</li>
-            </ul>
+            Er närvaro på vår stora dag är den bästa gåvan vi kan få. Om ni ändå önskar ge en present, så kommer några tips <a href="https://presentlistan.nu/4BF256/">här</a>.
         </p>
     </div>
   </main>
 
   <script>
    
-   // Toggle RSVP iframe visibility
     const toggleBtn = document.getElementById('toggle-rsvp');
     const rsvpFrame = document.getElementById('rsvp-form');
     if(toggleBtn && rsvpFrame){
     toggleBtn.addEventListener('click', () => {
        const isHidden = rsvpFrame.classList.toggle('hidden');
        toggleBtn.setAttribute('aria-expanded', String(!isHidden));
-       toggleBtn.textContent = isHidden ? 'Klicka här för att OSA!' : 'Jag har redan svarat';
+       toggleBtn.textContent = isHidden ? 'Klicka här för att OSA, gärna så snabbt som möjligt!' : 'Jag har redan svarat';
        if(!isHidden){
-         // optional: focus iframe for keyboard users
          rsvpFrame.focus();
        }
      });
