@@ -27,9 +27,11 @@
 
     img{width:100%;border-radius:12px;margin-bottom:0px;object-fit:cover;object-position:center}
     /* small/right-aligned route image, responsive */
-    img.route{width:140px;max-width:30%;float:right;margin:6px 0 12px 16px;border-radius:8px;object-fit:cover;display:block}
+    img.route{width: 250px;max-width:50%;float:right;}
     iframe{width:100%;margin-top:24px}
     .hidden{display:none}
+    /* ensure route image stays hidden initially (overrides img.route specificity) */
+    .route.hidden{display:none !important}
     button{background:none;border:2px solid #aaa;border-radius: 40px; color:var(--accent);cursor:pointer;font-size:16px;padding: 20px;font-family:inherit}
     
     @media (max-width:600px){
@@ -72,9 +74,9 @@
     <iframe id="rsvp-form" class="hidden" src="https://docs.google.com/forms/d/e/1FAIpQLSdliz0vHYAIFRwzKzVowGcpYWLgU5QyzW9yA1rdoFVvzS6k7w/viewform?embedded=true" width="640" height="454" frameborder="0" marginheight="0" marginwidth="0">Läser in…</iframe>
 
         <p> 
-          Lättast att ta sig till bygdegården är med bil / taxi, det finns gott om parkeringsmöjligheter både vid kyrkan och bygdegården. Det går även att ta buss till byggdegården, vill man bli hämtad vid busshållsplatsen kan man hör av sig till Lovisas bror Philip. 
-          <img src="route.png" alt="" class="route">
+          Lättast att ta sig till bygdegården är med bil / taxi. Det kan finnas möjlighet till samåkning, då några kommer ha platser över i sina bilar. Det går även att <a href="#" id="toggle-route" aria-controls="route-img" aria-expanded="false">ta buss till byggdegården</a>, vill man bli hämtad vid busshållsplatsen kan man hör av sig till Lovisas bror Philip. 
         </p>
+            <img src="route.png" alt="Vägbeskrivning" id="route-img" class="route hidden" aria-hidden="true">
         
       <h2 id="Dresscode">Klädkod</h2>
         <p>
@@ -106,6 +108,20 @@
        }
      });
    }
+
+    const toggleRoute = document.getElementById('toggle-route');
+    const routeImg = document.getElementById('route-img');
+    if(toggleRoute && routeImg){
+      toggleRoute.addEventListener('click', (e) => {
+        e.preventDefault();
+        const isHidden = routeImg.classList.toggle('hidden');
+        routeImg.setAttribute('aria-hidden', String(isHidden));
+        toggleRoute.setAttribute('aria-expanded', String(!isHidden));
+        if(!isHidden){
+          routeImg.scrollIntoView({behavior:'smooth', block:'center'});
+        }
+      });
+    }
   </script>
 </body>
 </html>
