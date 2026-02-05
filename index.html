@@ -26,6 +26,8 @@
     p{line-height:1.7;color:#222;margin:10px 0}
 
     img{width:100%;border-radius:12px;margin-bottom:0px;object-fit:cover;object-position:center}
+    /* small/right-aligned route image, responsive */
+    img.route{width:140px;max-width:30%;float:right;margin:6px 0 12px 16px;border-radius:8px;object-fit:cover;display:block}
     iframe{width:100%;margin-top:24px}
     .hidden{display:none}
     button{background:none;border:2px solid #aaa;border-radius: 40px; color:var(--accent);cursor:pointer;font-size:16px;padding: 20px;font-family:inherit}
@@ -36,6 +38,8 @@
         body{background-position:calc(50% - 30px) calc(50% - 10px);}
         header .nav nav a{padding:6px 8px;font-size:x-small;}
         header .nav .brand{font-size:10px;}
+        /* on mobile, don't float the route image; center and make it a bit larger */
+        img.route{float:none;margin:12px auto;display:block;max-width:60%;width:160px}
     }
   </style>
 </head>
@@ -65,8 +69,13 @@
             Efter det väntas middag och fest i Ärentuna Bygdegård.
         </p>
     <button id="toggle-rsvp" class="backtop" aria-controls="rsvp-form" aria-expanded="false">Klicka här för att OSA, gärna så snabbt som möjligt!</button>
-    <iframe id="rsvp-form" class="hidden" src="https://docs.google.com/forms/d/e/1FAIpQLSdliz0vHYAIFRwzKzVowGcpYWLgU5QyzW9yA1rdoFVvzS6k7w/viewform?embedded=true" width="640" height="454" frameborder="0" marginheight="0" marginwidth="0">Läser in …</iframe>
+    <iframe id="rsvp-form" class="hidden" src="https://docs.google.com/forms/d/e/1FAIpQLSdliz0vHYAIFRwzKzVowGcpYWLgU5QyzW9yA1rdoFVvzS6k7w/viewform?embedded=true" width="640" height="454" frameborder="0" marginheight="0" marginwidth="0">Läser in…</iframe>
 
+        <p> 
+          Lättast att ta sig till bygdegården är med bil / taxi, det finns gott om parkeringsmöjligheter både vid kyrkan och bygdegården. Det går även att ta buss till byggdegården, vill man bli hämtad vid busshållsplatsen kan man hör av sig till Lovisas bror Philip. 
+          <img src="route.png" alt="" class="route">
+        </p>
+        
       <h2 id="Dresscode">Klädkod</h2>
         <p>
             Ha på er det ni vill och det ni känner er bekväma med. Om ni vill kan ni gå efter klädkoden kavaj som är kostym eller klänning.
